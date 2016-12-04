@@ -11,6 +11,10 @@ h2 {
 	line-height: 160%;
 }
 
+p {
+	font-size: 16pt;
+}
+
 a:link {
     text-decoration: none;
 }
@@ -25,6 +29,14 @@ a:hover {
 
 a:active {
     text-decoration: none;
+}
+
+.padding-top {
+	padding-top: 100px;
+}
+
+.bg-black-tran {
+	background-color: rgba(0,0,0,0.5);
 }
 
 .tranbar {
@@ -75,8 +87,19 @@ a:active {
 	color: white;
 	width: 100vw;
 	height: 100vh;
-	min-height: 500px;
-	background-image: url("/img/function-bg-2.jpg");
+	min-height: 760px;
+	background-image: url("/img/function-bg.jpg");
+	background-size: cover;
+	display: table;
+}
+
+.choc-bg {
+	text-align: center;
+	color: white;
+	width: 100vw;
+	height: 100vh;
+	min-height: 760px;
+	background-image: url("/img/choc-bg.jpg");
 	background-size: cover;
 	display: table;
 }
@@ -106,9 +129,16 @@ a:active {
 	border: 2px solid black;
 	background: white;
 	width: 150px;
-	height: 150px;
+	height: 120px;
 	vertical-align: middle;
 	border-radius: 25px;
 	color:black;
-	line-height:160%
+	line-height:140%
+}
+
+.text-box {
+	margin: 0 auto;
+	background-color: rgba(0,0,0,0.5);
+	padding:20px;
+	width:80vw;
 }

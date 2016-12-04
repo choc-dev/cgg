@@ -8,6 +8,8 @@
 <meta name="author" content="">
 <link href="/css/bootstrap.min.css" rel="stylesheet">
 <link href="/css/campusgogo.css" rel="stylesheet">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="/js/jquery-3.1.0.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>
 <script>
@@ -35,21 +37,22 @@
 			} // End if
 		});
 	});
-	
-	 $(window).scroll(function() {
-		    if($(this).scrollTop() > 50)  /*height in pixels when the navbar becomes non opaque*/ 
-		    {
-		        $('.navbar').removeClass('tranbar');
-		        $('.navbar').addClass('blackbar');
-		    } else {
-		        $('.navbar').addClass('tranbar');
-		        $('.navbar').removeClass('blackbar');
-		    }
-		});
+
+	$(window).scroll(function() {
+		if ($(this).scrollTop() > 50) /*height in pixels when the navbar becomes non opaque*/
+		{
+			$('.navbar').removeClass('tranbar');
+			$('.navbar').addClass('blackbar');
+		} else {
+			$('.navbar').addClass('tranbar');
+			$('.navbar').removeClass('blackbar');
+		}
+	});
 </script>
 </head>
 <body>
-	<nav class="navbar navbar-inverse navbar-fixed-top tranbar" role="navigation">
+	<nav class="navbar navbar-inverse navbar-fixed-top tranbar"
+		role="navigation">
 		<div class="container">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
@@ -68,6 +71,7 @@
 					<li><a href="#home">홈</a></li>
 					<li><a href="#intro">서비스소개</a></li>
 					<li><a href="#function">핵심기능</a></li>
+					<li><a href="#choc">촉촉컴퍼니</a></li>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
@@ -85,11 +89,9 @@
 					</strong>
 				</h2>
 			</div>
-			<div class="col-md-12 text-center">
-				<a class="home-button" href="#intro">캠퍼스고고란?</a>
-				<br />
-				<br />
-				<a class="home-button" href="#home">촉촉컴퍼니는?</a>
+			<div class="col-md-12 text-center padding-top">
+				<a class="home-button" href="#intro">캠퍼스고고란?</a> <br /> <br /> <a
+					class="home-button" href="#home">촉촉컴퍼니는?</a>
 			</div>
 		</div>
 	</section>
@@ -105,29 +107,66 @@
 					</strong>
 				</h2>
 			</div>
+			<div>
+				<a href="#function"><i class="fa fa-angle-double-down"
+					style="font-size: 40px"></i></a>
+			</div>
 		</div>
 	</section>
 	<section class="container function_bg" id="function">
 		<div class="row vmiddle">
 			<div class="col-md-12 text-center">
-				<img alt="logo" src="/img/white-logo-function.png" class="img-responsive">
+				<img alt="logo" src="/img/white-logo-function.png"
+					class="img-responsive">
 			</div>
 			<div class="col-md-3"></div>
 			<div class="col-md-6">
 				<div class="col-md-4">
-					<h2><strong>학습</strong></h2>
-					<button class="function-button"><strong>모의고사</strong><br />성적관리<br />약점분석</button>
+					<h2>
+						<strong><i class="fa fa-pencil"></i> 학습</strong>
+					</h2>
+					<button class="function-button">
+						<strong>모의고사</strong><br /><strong>성적관리</strong><br /><strong>약점분석</strong>
+					</button>
 				</div>
 				<div class="col-md-4">
-					<h2><strong>정보</strong></h2>
-					<button class="function-button"><strong>대학검색<br />대학추천<br />대학소개</strong></button>
+					<h2>
+						<strong><i class="fa fa-area-chart"></i> 정보</strong>
+					</h2>
+					<button class="function-button">
+						<strong>대학검색<br />대학추천<br />대학소개
+						</strong>
+					</button>
 				</div>
 				<div class="col-md-4">
-					<h2><strong>상담</strong></h2>
-					<button class="function-button"><strong>진로상담<br />성적관리<br />합격멘토링</strong></button>
+					<h2>
+						<strong><i class="fa fa-group"></i> 상담</strong>
+					</h2>
+					<button class="function-button">
+						<strong>진로상담<br />성적관리<br />합격멘토링
+						</strong>
+					</button>
 				</div>
 			</div>
 			<div class="col-md-3"></div>
+		</div>
+	</section>
+	<section class="container choc-bg" id="choc">
+		<div class="row vmiddle">
+			<div class="col-md-12 text-center">
+				<h1>
+					<strong>촉촉컴퍼니</strong>
+				</h1>
+				<h2>'메마른 세상에 희망이라는 단비를 내리는 촉촉한 서비스를 만들자’</h2>
+				<div class="text-box text-left">
+					<p>“교육은 깨끗한 공기나 물처럼 누구나 누려야 할 권리다.” </p>
+					<p>비영리 교육 서비스인 칸아카데미의 창립자 살만 칸의 이야기입니다.</p>
+					<p>미래에 대한 기대와 꿈으로 가득해야 할 학생들이 희망이 없다고 이야기하는 안타까운 시대입니다. 
+					앞만 보고 달려나가다 보니 푸른 하늘을 바라볼 수 있는 시간적 여유도, 주변 환경을 돌아볼 수 있는 심적 여유도 없는 세상을 살아가고 있습니다. 
+					촉촉컴퍼니는 이런 세상을 촉촉하게 적셔줄 수 있는 서비스를 만들기 위해 태어났습니다. </p>
+					<p>모든 수험생의 든든한 조력자가 될 캠퍼스고고를 시작으로 세상 사람들의 삶에 활력을 주는 달콤한 서비스를 만들어 나가겠습니다.</p>
+				</div>
+			</div>
 		</div>
 	</section>
 </body>
