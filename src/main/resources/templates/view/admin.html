@@ -1,11 +1,78 @@
 <!DOCTYPE html>
 <html>
 <head>
-{{> /include/header }}
+<title>캠퍼스고고-대학입시의 든든한 조력자가 되겠습니다</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/admin.css" rel="stylesheet">
+<link href="/css/navbar-custom.css" rel="stylesheet">
+<script src="/js/jquery-3.1.0.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/admin.js"></script>
 </head>
 <body>
-{{> /include/navbar }}
+	{{> /include/navbar}}
+	<section class="container-fluid home_bg" id="home">
+		<form name="analysis" method="POST" action="/admin/answer">
+			<div class="row">
+				<div class="col-md-12 text-center padding-top-sm">
+					<div>
+						<h4>입력을 원하는 모의고사를 선택해주세요.</h4>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3"></div>
+				<div class="col-md-6">
+					<div class="col-md-4">
+						<select name="grade" class="form-control">
+							<option label="학년 선택"></option>
+							<option value="1">고1</option>
+							<option value="2">고2</option>
+							<option value="3">고3</option>
+						</select>
+					</div>
+					<div class="col-md-4 text-center">
+						<select name="year" class="form-control">
+							<option label="시행년도 선택"></option>
+							<option value="2016">2016년</option>
+							<option value="2015">2015년</option>
+							<option value="2014">2014년</option>
+							<option value="2013">2013년</option>
+							<option value="2012">2012년</option>
+							<option value="2011">2011년</option>
+							<option value="2010">2010년</option>
+						</select>
 
-	admin
+					</div>
+					<div class="col-md-4 text-center">
+						<select name="month" class="form-control">
+							<option label="시행월 선택"></option>
+							<option value="11">11월</option>
+							<option value="10">10월</option>
+							<option value="9">9월</option>
+							<option value="7">7월</option>
+							<option value="6">6월</option>
+							<option value="4">4월</option>
+							<option value="3">3월</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-md-3"></div>
+			</div>
+			<div class="container-fluid padding-top-sm" id="answer-table"></div>
+			<div class="container-fluid">
+				<div class="alert alert-danger hidden">
+					<strong id="alert-message"></strong>
+				</div>
+				<button type="button" class="btn btn-custom btn-lg">입력하기</button>
+			</div>
+		</form>
+	</section>
+	
 </body>
 </html>

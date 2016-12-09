@@ -6,22 +6,30 @@ $(document).ready(function() {
     	$(this).toggleClass("fault-td");
     });
 
+    $("select").change(function() {
+    	console.log("hidden");
+    	$(".alert").addClass('hidden');
+    })
+    
     $("button").click(analysis);
 
     function analysis(e) {
     	
     	if($("select[name=grade]").val()=="") {
-    		alert("학년을 선택하세요.");
+    		$("#alert-message").text("학년을 선택하세요.");
+    		$(".alert").removeClass('hidden');
     		return;
     	}
     	
     	if($("select[name=year]").val()=="") {
-    		alert("모의고사 시행년도를 선택하세요.");
+    		$("#alert-message").text("모의고사 시행년도를 선택하세요.");
+    		$(".alert").removeClass('hidden');
     		return;
     	}
     	
     	if($("select[name=month]").val()=="") {
-    		alert("모의고사 시행월을 선택하세요.");
+    		$("#alert-message").text("모의고사 시행월을 선택하세요.");
+    		$(".alert").removeClass('hidden');
     		return;
     	}
     	

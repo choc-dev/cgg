@@ -14,7 +14,7 @@
 			</div>
 		</div>
 		<div class="row padding-top-sm">
-			<form name="analysis" method="GET" action="/analysis" >
+			<form name="analysis" method="GET" action="/analysis">
 				<div class="col-md-3"></div>
 				<div class="col-md-6">
 					<div class="col-md-4">
@@ -48,8 +48,7 @@
 							<option value="6">6월</option>
 							<option value="4">4월</option>
 							<option value="3">3월</option>
-						</select>
-						<input type="hidden" name="fault" />
+						</select> <input type="hidden" name="fault" />
 					</div>
 				</div>
 			</form>
@@ -122,6 +121,9 @@
 			</table>
 		</div>
 		<div class="container-fluid padding-top-sm text-center">
+			<div class="alert alert-danger hidden">
+				<strong id="alert-message"></strong>
+			</div>
 			<button type="button" class="btn btn-custom btn-lg">시작하기</button>
 		</div>
 	</section>
