@@ -36,6 +36,9 @@ function generateAnswerTable() {
 		text : "정답"
 	}));
 	trHead.append($("<td />", {
+		text : "배점"
+	}));
+	trHead.append($("<td />", {
 		text : "세부영역"
 	}));
 	trHead.append($("<td />", {
@@ -83,6 +86,28 @@ function generateAnswerTable() {
 		}
 		tdAnswer.append(selectAnswer);
 		trBody.append(tdAnswer);
+		
+		// 배점 dropdown
+		var tdScore = $("<td />");
+		var selectScore = $("<select>", {
+			name : "score",
+			class : "form-control"
+		});
+		var optionScoreLabel = $("<option />", {
+			label : "배점"
+		});
+		selectScore.append(optionScoreLabel);
+
+		selectScore.append($("<option />", {
+			value : "2",
+			text : "2"
+		}));
+		selectScore.append($("<option />", {
+			value : "3",
+			text : "3"
+		}));
+		tdScore.append(selectScore);
+		trBody.append(tdScore);		
 
 		// 세부영역 dropdown
 		var tdDomain = $("<td />");

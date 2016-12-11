@@ -1,14 +1,64 @@
 <!DOCTYPE html>
 <html>
 <head>
-{{> /include/header }}
+<title>캠퍼스고고-대학입시의 든든한 조력자가 되겠습니다</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/campusgogo.css" rel="stylesheet">
+<link href="/css/navbar-custom.css" rel="stylesheet">
+<script src="/js/jquery-3.1.0.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/campusgogo.js"></script>
 </head>
 <body>
-{{> /include/navbar }}
-	{{#param}}
-	<div>{{year}} 모의고사</div>
-	<div>{{grade}}</div>
-	<div>{{fault}}</div>
-	{{/param}}
+	{{> /include/navbar}}
+	<section class="container-fluid home_bg" id="home">
+		{{#result}}
+		<form name="analysis" method="POST" action="">
+			<div class="row">
+				<div class="col-md-12 text-center padding-top-sm">
+					<h4>2017년 수능까지 D-000일</h4>
+					<h4>{{year}}년 {{month}}월 모의고사에서 나의 국어 실력은...</h4>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3"></div>
+				<div class="col-md-6">
+					<div class="col-md-12 text-center">
+						<table class="table">
+							<thead>
+								<tr>
+									<td>내 점수</td>
+									<td>등급</td>
+									<td>백분위</td>
+									<td>전국평균</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>{{score}}</td>
+									<td>{{scoreGrade}}</td>
+									<td>{{rate}}</td>
+									<td>{{average}}</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="col-md-3"></div>
+			</div>
+			<div class="container-fluid padding-top-sm" id="answer-table"></div>
+			<div class="container-fluid">
+				<button type="button" class="btn btn-custom btn-lg">실력키우기</button>
+				<button type="button" class="btn btn-custom btn-lg">다른 모의고사 결과 분석하기</button>
+			</div>
+		</form>
+		{{/result}}
+	</section>
+
 </body>
 </html>

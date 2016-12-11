@@ -1,7 +1,5 @@
 package kr.choc.cgg.model;
 
-import java.time.LocalDateTime;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,20 +8,12 @@ import javax.persistence.Id;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
-public class Answer {
-	
+public class AnalysisResult {
+
 	@Id
 	@GeneratedValue
 	@JsonProperty
 	private Long id;
-
-	@Column(nullable = false)
-	@JsonProperty
-	private Integer number;
-
-	@Column(nullable = false)
-	@JsonProperty
-	private Integer answer;
 
 	@Column(nullable = false)
 	@JsonProperty
@@ -39,11 +29,23 @@ public class Answer {
 
 	@Column(nullable = false)
 	@JsonProperty
-	private String domain;
+	private String fault;
 
 	@Column(nullable = false)
 	@JsonProperty
-	private String purpose;
+	private Integer score;
+
+	@Column(nullable = false)
+	@JsonProperty
+	private Integer scoreGrade;
+
+	@Column(nullable = false)
+	@JsonProperty
+	private Integer rate;
+
+	@Column(nullable = false)
+	@JsonProperty
+	private Long average;
 
 	public Long getId() {
 		return id;
@@ -51,22 +53,6 @@ public class Answer {
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public Integer getNumber() {
-		return number;
-	}
-
-	public void setNumber(Integer number) {
-		this.number = number;
-	}
-
-	public Integer getAnswer() {
-		return answer;
-	}
-
-	public void setAnswer(Integer answer) {
-		this.answer = answer;
 	}
 
 	public Integer getGrade() {
@@ -85,6 +71,14 @@ public class Answer {
 		this.year = year;
 	}
 
+	public String getFault() {
+		return fault;
+	}
+
+	public void setFault(String fault) {
+		this.fault = fault;
+	}
+	
 	public Integer getMonth() {
 		return month;
 	}
@@ -92,27 +86,43 @@ public class Answer {
 	public void setMonth(Integer month) {
 		this.month = month;
 	}
-
-	public String getDomain() {
-		return domain;
+	
+	public Integer getScore() {
+		return score;
 	}
 
-	public void setDomain(String domain) {
-		this.domain = domain;
+	public void setScore(Integer score) {
+		this.score = score;
 	}
 
-	public String getPurpose() {
-		return purpose;
+	public Integer getScoreGrade() {
+		return scoreGrade;
 	}
 
-	public void setPurpose(String purpose) {
-		this.purpose = purpose;
+	public void setScoreGrade(Integer scoreGrade) {
+		this.scoreGrade = scoreGrade;
+	}
+
+	public Integer getRate() {
+		return rate;
+	}
+
+	public void setRate(Integer rate) {
+		this.rate = rate;
+	}
+
+	public Long getAverage() {
+		return average;
+	}
+
+	public void setAverage(Long average) {
+		this.average = average;
 	}
 
 	@Override
 	public String toString() {
-		return "Answer [id=" + id + ", number=" + number + ", answer=" + answer + ", grade=" + grade + ", year=" + year
-				+ ", month=" + month + ", domain=" + domain + ", purpose=" + purpose + "]";
+		return "AnalysisParam [id=" + id + ", grade=" + grade + ", year=" + year + ", month="
+				+ month + ", fault=" + fault + "]";
 	}
 	
 }
