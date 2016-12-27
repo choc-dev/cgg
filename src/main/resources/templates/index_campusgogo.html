@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+{{> /include/header}}
+<body>
+	{{> /include/navbar}}
+	<section class="container-fluid home_bg" id="home">
+		<div class="row">
+			<div class="col-md-12 text-center padding-top-sm">
+				<h1>열려라 대학의 문!</h1>
+				<div class="padding-top-sm">
+					<h4>국어 만점에 도전하시겠습니까?</h4>
+					<h4>지난 모의고사에서 틀린 문제를 입력하세요.</h4>
+				</div>
+			</div>
+		</div>
+		<div class="row padding-top-sm">
+			<form name="analysis" method="GET" action="/analysis">
+				<div class="col-md-3"></div>
+				<div class="col-md-6">
+					<div class="col-md-4">
+						<select name="grade" class="form-control">
+							<option label="학년 선택"></option>
+							<option value="1">고1</option>
+							<option value="2">고2</option>
+							<option value="3">고3</option>
+						</select>
+					</div>
+					<div class="col-md-4 text-center">
+						<select name="year" class="form-control">
+							<option label="시행년도 선택"></option>
+							<option value="2016">2016년</option>
+							<option value="2015">2015년</option>
+							<option value="2014">2014년</option>
+							<option value="2013">2013년</option>
+							<option value="2012">2012년</option>
+							<option value="2011">2011년</option>
+							<option value="2010">2010년</option>
+						</select>
+
+					</div>
+					<div class="col-md-4 text-center">
+						<select name="month" class="form-control">
+							<option label="시행월 선택"></option>
+							<option value="3">3월</option>
+							<option value="4">4월</option>
+							<option value="6">6월</option>
+							<option value="7">7월</option>
+							<option value="9">9월</option>
+							<option value="10">10월</option>
+							<option value="11">11월</option>
+						</select> <input type="hidden" name="fault" />
+					</div>
+				</div>
+			</form>
+			<div class="col-md-3"></div>
+		</div>
+		<div class="container-fluid padding-top-sm">
+			<table class="full-width-table">
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>2</td>
+						<td>3</td>
+						<td>4</td>
+						<td>5</td>
+						<td>6</td>
+						<td>7</td>
+						<td>8</td>
+						<td>9</td>
+						<td>10</td>
+					</tr>
+					<tr>
+						<td>11</td>
+						<td>12</td>
+						<td>13</td>
+						<td>14</td>
+						<td>15</td>
+						<td>16</td>
+						<td>17</td>
+						<td>18</td>
+						<td>19</td>
+						<td>20</td>
+					</tr>
+					<tr>
+						<td>21</td>
+						<td>22</td>
+						<td>23</td>
+						<td>24</td>
+						<td>25</td>
+						<td>26</td>
+						<td>27</td>
+						<td>28</td>
+						<td>29</td>
+						<td>30</td>
+					</tr>
+					<tr>
+						<td>31</td>
+						<td>32</td>
+						<td>33</td>
+						<td>34</td>
+						<td>35</td>
+						<td>36</td>
+						<td>37</td>
+						<td>38</td>
+						<td>39</td>
+						<td>40</td>
+					</tr>
+					<tr>
+						<td>41</td>
+						<td>42</td>
+						<td>43</td>
+						<td>44</td>
+						<td>45</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="container-fluid padding-top-sm text-center">
+			<div class="alert alert-danger hidden">
+				<strong id="alert-message"></strong>
+			</div>
+			<button type="button" class="btn btn-custom btn-lg">시작하기</button>
+		</div>
+	</section>
+</body>
+</html>
