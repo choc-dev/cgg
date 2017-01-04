@@ -7,53 +7,27 @@ import javax.persistence.Id;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-@Entity
 public class AnalysisResult {
 
-	@Id
-	@GeneratedValue
-	@JsonProperty
-	private Long id;
-
-	@Column(nullable = false)
-	@JsonProperty
 	private Integer grade;
 
-	@Column(nullable = false)
-	@JsonProperty
 	private Integer year;
 
-	@Column(nullable = false)
-	@JsonProperty
 	private Integer month;
 
-	@Column(nullable = false)
-	@JsonProperty
 	private String fault;
 
-	@Column(nullable = false)
-	@JsonProperty
 	private Integer score;
 
-	@Column(nullable = false)
-	@JsonProperty
-	private Integer scoreGrade;
+	private DomainManager one;
 
-	@Column(nullable = false)
-	@JsonProperty
-	private Integer rate;
+	private DomainManager two;
 
-	@Column(nullable = false)
-	@JsonProperty
-	private Long average;
+	private DomainManager three;
 
-	public Long getId() {
-		return id;
-	}
+	private DomainManager four;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+	private DomainManager five;
 
 	public Integer getGrade() {
 		return grade;
@@ -78,7 +52,7 @@ public class AnalysisResult {
 	public void setFault(String fault) {
 		this.fault = fault;
 	}
-	
+
 	public Integer getMonth() {
 		return month;
 	}
@@ -86,7 +60,7 @@ public class AnalysisResult {
 	public void setMonth(Integer month) {
 		this.month = month;
 	}
-	
+
 	public Integer getScore() {
 		return score;
 	}
@@ -95,34 +69,50 @@ public class AnalysisResult {
 		this.score = score;
 	}
 
-	public Integer getScoreGrade() {
-		return scoreGrade;
+	public DomainManager getOne() {
+		return one;
 	}
 
-	public void setScoreGrade(Integer scoreGrade) {
-		this.scoreGrade = scoreGrade;
+	public void setOne(DomainManager one) {
+		this.one = one;
 	}
 
-	public Integer getRate() {
-		return rate;
+	public DomainManager getTwo() {
+		return two;
 	}
 
-	public void setRate(Integer rate) {
-		this.rate = rate;
+	public void setTwo(DomainManager two) {
+		this.two = two;
 	}
 
-	public Long getAverage() {
-		return average;
+	public DomainManager getThree() {
+		return three;
 	}
 
-	public void setAverage(Long average) {
-		this.average = average;
+	public void setThree(DomainManager three) {
+		this.three = three;
+	}
+
+	public DomainManager getFour() {
+		return four;
+	}
+
+	public void setFour(DomainManager four) {
+		this.four = four;
+	}
+
+	public DomainManager getFive() {
+		return five;
+	}
+
+	public void setFive(DomainManager five) {
+		this.five = five;
 	}
 
 	@Override
 	public String toString() {
-		return "AnalysisParam [id=" + id + ", grade=" + grade + ", year=" + year + ", month="
-				+ month + ", fault=" + fault + "]";
+		return "AnalysisParam [grade=" + grade + ", year=" + year + ", month=" + month + ", fault="
+				+ fault + "]";
 	}
-	
+
 }

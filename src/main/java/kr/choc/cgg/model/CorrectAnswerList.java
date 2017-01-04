@@ -4,6 +4,12 @@ import java.util.Arrays;
 
 public class CorrectAnswerList {
 
+	private Integer year;
+
+	private Integer month;
+
+	private Integer grade;
+
 	private Integer[] number;
 
 	private Integer[] answer;
@@ -15,6 +21,30 @@ public class CorrectAnswerList {
 	private String[] purpose;
 
 	private String[] explain;
+
+	public Integer getYear() {
+		return year;
+	}
+
+	public void setYear(Integer year) {
+		this.year = year;
+	}
+
+	public Integer getMonth() {
+		return month;
+	}
+
+	public void setMonth(Integer month) {
+		this.month = month;
+	}
+
+	public Integer getGrade() {
+		return grade;
+	}
+
+	public void setGrade(Integer grade) {
+		this.grade = grade;
+	}
 
 	public Integer[] getNumber() {
 		return number;

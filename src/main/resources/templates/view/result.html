@@ -10,55 +10,159 @@
 <link href="/css/bootstrap.min.css" rel="stylesheet">
 <link href="/css/campusgogo.css" rel="stylesheet">
 <link href="/css/navbar-custom.css" rel="stylesheet">
+<link href="/css/chartist.min.css" rel="stylesheet">
 <script src="/js/jquery-3.1.0.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>
-<script src="/js/campusgogo.js"></script>
+<script src="/js/chartist.min.js"></script>
+
 </head>
 <body>
 	{{> /include/navbar}}
 	<section class="container-fluid home_bg" id="home">
 		{{#result}}
-		<form name="analysis" method="POST" action="">
-			<div class="row">
-				<div class="col-md-12 text-center padding-top-sm">
-					<h4>2017년 수능까지 D-000일</h4>
-					<h4>{{year}}년 {{month}}월 모의고사에서 나의 국어 실력은...</h4>
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-6 text-center padding-top-sm">
+				<div class="page-header">
+					<h3>{{year}}년 {{month}}월 고{{grade}} 모의고사</h3>
+					<h1>나의 국어 점수 : {{score}} 점</h1>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-md-3"></div>
-				<div class="col-md-6">
-					<div class="col-md-12 text-center">
-						<table class="table">
-							<thead>
-								<tr>
-									<td>내 점수</td>
-									<td>등급</td>
-									<td>백분위</td>
-									<td>전국평균</td>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>{{score}}</td>
-									<td>{{scoreGrade}}</td>
-									<td>{{rate}}</td>
-									<td>{{average}}</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
+			<div class="col-md-3"></div>
+
+		</div>
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-6">
+				<div class="page-header">
+					<h1>영역별 성취도</h1>
 				</div>
-				<div class="col-md-3"></div>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>영역</th>
+							<th>점수</th>
+							<th>성취도(%)</th>
+							<th>학습수준</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>화작</td>
+							<td>{{one.score}}</td>
+							<td>{{one.rate}}</td>
+							<td>{{one.info.description}}</td>
+						</tr>
+						<tr>
+							<td>작문</td>
+							<td>{{two.score}}</td>
+							<td>{{two.rate}}</td>
+							<td>{{two.info.description}}</td>
+						</tr>
+						<tr>
+							<td>문법</td>
+							<td>{{three.score}}</td>
+							<td>{{three.rate}}</td>
+							<td>{{three.info.description}}</td>
+						</tr>
+						<tr>
+							<td>독서</td>
+							<td>{{four.score}}</td>
+							<td>{{four.rate}}</td>
+							<td>{{four.info.description}}</td>
+						</tr>
+						<tr>
+							<td>문학</td>
+							<td>{{five.score}}</td>
+							<td>{{five.rate}}</td>
+							<td>{{five.info.description}}</td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
-			<div class="container-fluid padding-top-sm" id="answer-table"></div>
-			<div class="container-fluid">
-				<button type="button" class="btn btn-custom btn-lg">실력키우기</button>
-				<button type="button" class="btn btn-custom btn-lg">다른 모의고사 결과 분석하기</button>
+			<div class="col-md-3"></div>
+		</div>
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-6">
+				<div class="page-header">
+					<h1>성취도 그래프</h1>
+				</div>
+				<div class="ct-chart"></div>
 			</div>
-		</form>
+			<div class="col-md-3"></div>
+		</div>
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-6">
+				<div class="page-header">
+					<h1>캠퍼스고고의 제안</h1>
+				</div>
+				<div class="panel {{one.info.style}} text-left">
+					<div class="panel-heading">화법 : {{one.info.title}}</div>
+					<div class="panel-body">{{one.info.solution}}</div>
+				</div>
+				<div class="panel {{two.info.style}} text-left">
+					<div class="panel-heading">작문 : {{two.info.title}}</div>
+					<div class="panel-body">{{two.info.solution}}</div>
+				</div>
+				<div class="panel {{three.info.style}} text-left">
+					<div class="panel-heading">문법 : {{three.info.title}}</div>
+					<div class="panel-body">{{three.info.solution}}</div>
+				</div>
+				<div class="panel {{four.info.style}} text-left">
+					<div class="panel-heading">독서 : {{four.info.title}}</div>
+					<div class="panel-body">{{four.info.solution}}</div>
+				</div>
+				<div class="panel {{five.info.style}} text-left">
+					<div class="panel-heading">문학 : {{five.info.title}}</div>
+					<div class="panel-body">{{five.info.solution}}</div>
+				</div>
+			</div>
+			<div class="col-md-3"></div>
+		</div>
+		<div class="container-fluid">
+			<button type="button" class="btn btn-custom btn-lg"
+				onclick="location.href='/'">다른 모의고사 결과 분석하기</button>
+		</div>
 		{{/result}}
 	</section>
+
+	<script>
+	{{#result}}
+var data = {
+		  labels: ['화법', '작문', '문법', '독서', '문학'],
+		    series: [
+		    [{{one.rate}}, {{two.rate}}, {{three.rate}}, {{four.rate}}, {{five.rate}}]
+		  ]
+		};
+
+		var options = {
+		  seriesBarDistance: 15
+		};
+
+		var responsiveOptions = [
+		  ['screen and (min-width: 641px) and (max-width: 1024px)', {
+		    seriesBarDistance: 10,
+		    axisX: {
+		      labelInterpolationFnc: function (value) {
+		        return value;
+		      }
+		    }
+		  }],
+		  ['screen and (max-width: 640px)', {
+		    seriesBarDistance: 5,
+		    axisX: {
+		      labelInterpolationFnc: function (value) {
+		        return value[0];
+		      }
+		    }
+		  }]
+		];
+
+		new Chartist.Bar('.ct-chart', data, options, responsiveOptions);
+{{/result}}
+</script>
 
 </body>
 </html>

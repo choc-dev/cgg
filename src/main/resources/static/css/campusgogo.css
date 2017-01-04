@@ -10,13 +10,16 @@ h1 {
 h2 {
 }
 
+.table td, th {
+   text-align: center;   
+}
+
 .home_bg {
 	text-align: center;
 	color: black;
 	width: 100%;
 	height: 100vh;
 	min-height: 500px;
-	background-color: #eeeeee;
 	display: table;
 }
 
@@ -59,4 +62,8 @@ h2 {
 .btn-custom:active, .btn-custom.active {
     background: #009688;
     box-shadow: none;
+}
+
+.ct-chart {
+	height: 250px;
 }

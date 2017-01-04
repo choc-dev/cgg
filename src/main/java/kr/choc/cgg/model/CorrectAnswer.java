@@ -18,10 +18,17 @@ public class CorrectAnswer {
 	@JsonProperty
 	private Long id;
 
-	@ManyToOne
-	@JoinColumn(foreignKey = @ForeignKey(name = "fk_correctanswer_to_mocktest"))
+	@Column(nullable = false)
 	@JsonProperty
-	private MockTest mockTest;
+	private Integer grade;
+
+	@Column(nullable = false)
+	@JsonProperty
+	private Integer year;
+
+	@Column(nullable = false)
+	@JsonProperty
+	private Integer month;
 
 	@Column(nullable = false)
 	@JsonProperty
@@ -51,14 +58,33 @@ public class CorrectAnswer {
 		super();
 	}
 
-	public CorrectAnswer(Integer number, Integer answer, Integer score, Integer domain, String purpose, String explain, MockTest mockTest) {
+	public CorrectAnswer(Long id, Integer grade, Integer year, Integer month, Integer number, Integer answer,
+			Integer score, Integer domain, String purpose, String explain) {
+		super();
+		this.id = id;
+		this.grade = grade;
+		this.year = year;
+		this.month = month;
 		this.number = number;
 		this.answer = answer;
 		this.score = score;
 		this.domain = domain;
 		this.purpose = purpose;
 		this.explain = explain;
-		this.mockTest = mockTest;
+	}
+
+	public CorrectAnswer(Integer grade, Integer year, Integer month, Integer number, Integer answer, Integer score,
+			Integer domain, String purpose, String explain) {
+		super();
+		this.grade = grade;
+		this.year = year;
+		this.month = month;
+		this.number = number;
+		this.answer = answer;
+		this.score = score;
+		this.domain = domain;
+		this.purpose = purpose;
+		this.explain = explain;
 	}
 
 	public Long getId() {
@@ -67,6 +93,30 @@ public class CorrectAnswer {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public Integer getGrade() {
+		return grade;
+	}
+
+	public void setGrade(Integer grade) {
+		this.grade = grade;
+	}
+
+	public Integer getYear() {
+		return year;
+	}
+
+	public void setYear(Integer year) {
+		this.year = year;
+	}
+
+	public Integer getMonth() {
+		return month;
+	}
+
+	public void setMonth(Integer month) {
+		this.month = month;
 	}
 
 	public Integer getNumber() {
@@ -81,16 +131,16 @@ public class CorrectAnswer {
 		return answer;
 	}
 
+	public void setAnswer(Integer answer) {
+		this.answer = answer;
+	}
+
 	public Integer getScore() {
 		return score;
 	}
 
 	public void setScore(Integer score) {
 		this.score = score;
-	}
-
-	public void setAnswer(Integer answer) {
-		this.answer = answer;
 	}
 
 	public Integer getDomain() {
@@ -115,20 +165,6 @@ public class CorrectAnswer {
 
 	public void setExplain(String explain) {
 		this.explain = explain;
-	}
-
-	public MockTest getMockTest() {
-		return mockTest;
-	}
-
-	public void setMockTest(MockTest mockTest) {
-		this.mockTest = mockTest;
-	}
-
-	@Override
-	public String toString() {
-		return "Answer [id=" + id + ", number=" + number + ", answer=" + answer + ", domain=" + domain + ", purpose="
-				+ purpose + "]";
 	}
 
 }
